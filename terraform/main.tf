@@ -45,8 +45,6 @@ resource "aws_s3_bucket_public_access_block" "idp_id_broker_search" {
 }
 
 resource "aws_s3_bucket_policy" "idp_id_broker_search" {
-  provider = aws.secondary
-
   bucket = aws_s3_bucket.idp_id_broker_search.id
   policy = jsonencode({
     Version = "2012-10-17",
